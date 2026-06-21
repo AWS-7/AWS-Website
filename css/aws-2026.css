@@ -701,6 +701,11 @@ body.mobile-nav-open {
     aspect-ratio: 1717 / 916;
     border-radius: 20px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.45rem, 2.2vw, 0.75rem);
+    box-sizing: border-box;
     background: linear-gradient(145deg, rgba(15, 16, 35, 0.95), rgba(25, 18, 48, 0.9));
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow:
@@ -715,17 +720,14 @@ body.mobile-nav-open {
 .hero-3d-card-inner img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
+    flex-shrink: 0;
 }
 
 .hero-3d-card-inner--banner {
     background: linear-gradient(135deg, #eef4ff 0%, #f8faff 100%);
-}
-
-.hero-3d-card-inner--banner img {
-    object-fit: contain;
 }
 
 .hero-3d-card-shine {
@@ -839,11 +841,19 @@ body.mobile-nav-open {
     }
 
     .hero-carousel-glass {
-        padding: 0.85rem 0.35rem 2rem;
+        padding: 0.75rem 0.35rem 1rem;
+    }
+
+    .hero-carousel-3d {
+        padding: 0.35rem 0 1rem;
     }
 
     .hero-carousel-3d .swiper-slide {
         width: 92%;
+    }
+
+    .hero-carousel-pagination {
+        bottom: 2px !important;
     }
 
     .hero-carousel-prev,
@@ -1731,6 +1741,59 @@ body.mobile-nav-open {
     .hero-2026 {
         padding: 90px 0 40px;
         text-align: center;
+    }
+
+    .hero-visual {
+        padding: 0.25rem 0 0.25rem;
+    }
+
+    .hero-carousel-glass {
+        padding: 0.65rem 0.3rem 0.95rem;
+    }
+
+    .hero-carousel-3d {
+        padding: 0.25rem 0 0.65rem;
+    }
+
+    .hero-3d-card {
+        gap: 0.45rem;
+    }
+
+    .testimonials-section.py-5 {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    .testimonials-wrapper {
+        padding: 1.15rem 0.9rem 1.5rem;
+    }
+
+    .testimonials-swiper {
+        padding-bottom: 1.5rem;
+    }
+
+    .testimonials-swiper .swiper-wrapper {
+        align-items: flex-start;
+    }
+
+    .testimonial-card-2026 {
+        padding: 1.15rem;
+        min-height: unset;
+        height: auto;
+    }
+
+    .testimonial-top {
+        margin-bottom: 0.75rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.875rem;
+        line-height: 1.6;
+        margin-bottom: 0.85rem;
+    }
+
+    .testimonial-author {
+        padding-top: 0.75rem;
     }
 
     .hero-2026 .lead {

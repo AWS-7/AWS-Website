@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         new Swiper('.testimonials-swiper', {
         slidesPerView: 1,
         spaceBetween: 24,
+        autoHeight: true,
         loop: true,
         autoplay: {
             delay: 4000,
@@ -58,10 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         breakpoints: {
             768: {
+                autoHeight: false,
                 slidesPerView: 2,
                 spaceBetween: 24,
             },
             1024: {
+                autoHeight: false,
                 slidesPerView: 2,
                 spaceBetween: 28,
             },
