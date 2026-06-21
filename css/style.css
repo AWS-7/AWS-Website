@@ -580,6 +580,11 @@ nav {
         width: 100%;
         position: relative;
     }
+
+    .hero-content {
+        height: auto;
+        justify-content: flex-start;
+    }
     
     .container {
         max-width: 100%;

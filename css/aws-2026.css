@@ -1877,6 +1877,8 @@ body.mobile-nav-open {
         justify-content: center;
         margin-left: 0;
         margin-right: 0;
+        --bs-gutter-y: 0.5rem;
+        row-gap: 0.5rem;
     }
 
     .hero-2026 .row > [class*="col-"] {
@@ -1890,7 +1892,7 @@ body.mobile-nav-open {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 0 0.75rem;
+        padding: 0 0 0.35rem;
     }
 
     .hero-carousel-wrap {
@@ -1934,20 +1936,19 @@ body.mobile-nav-open {
         align-items: center;
         text-align: center;
         width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        padding-top: 0;
+        margin-top: 0;
     }
 
     .hero-lottie-wrap {
-        width: 100%;
-        max-width: 180px;
-        margin: 0 auto 0.35rem;
-        display: flex;
-        justify-content: center;
+        display: none;
     }
 
-    .hero-lottie,
-    .hero-lottie svg {
-        max-width: 150px;
-        margin: 0 auto;
+    .hero-2026 .hero-badge {
+        margin-top: 0;
+        margin-bottom: 1rem;
     }
 
     .hero-2026 h1 {

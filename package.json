@@ -1,5 +1,9 @@
 {
+  "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "brochure": "node scripts/generate-brochure.js",
     "brochure:pdf": "node scripts/generate-brochure.js"
   },
@@ -9,6 +13,8 @@
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {
-    "puppeteer": "^24.2.0"
+    "puppeteer": "^24.2.0",
+    "vite": "^6.3.5",
+    "vite-plugin-static-copy": "^2.3.1"
   }
 }
