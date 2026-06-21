@@ -18,7 +18,7 @@ const BLOG_POSTS = [
             <p>Know your best-selling items and peak hours at a glance.</p>
             <h3>5. Affordable Yearly Plan</h3>
             <p>AWS-Billing costs only ₹6,000/year — complete setup & training included.</p>
-            <p><a href="index.html#pos-trial-form">Start your free trial today →</a></p>
+            <p><a href="index.html#aws-billing">Learn about AWS-Billing POS →</a></p>
         `
     },
     {

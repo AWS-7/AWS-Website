@@ -1,4 +1,4 @@
-// Trial popup — show after 2 seconds on every page load / refresh
+// Trial popup — show after 2 seconds on homepage load
 document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('trialPopup');
     const closeBtn = document.getElementById('closePopup');
@@ -44,32 +44,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Swiper for testimonials
     const testimonialSwiper = document.querySelector('.testimonials-swiper');
     if (testimonialSwiper) {
-        new Swiper('.testimonials-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 24,
-        autoHeight: true,
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.testimonials-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            768: {
-                autoHeight: false,
-                slidesPerView: 2,
-                spaceBetween: 24,
+        const counterEl = document.querySelector('.testimonials-current');
+        const swiper = new Swiper('.testimonials-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoHeight: true,
+            loop: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
             },
-            1024: {
-                autoHeight: false,
-                slidesPerView: 2,
-                spaceBetween: 28,
+            pagination: {
+                el: '.testimonials-pagination',
+                clickable: true,
             },
-        }
-    });
+            navigation: {
+                nextEl: '.testimonials-next',
+                prevEl: '.testimonials-prev',
+            },
+            on: {
+                init(s) {
+                    if (counterEl) counterEl.textContent = String(s.realIndex + 1);
+                },
+                slideChange(s) {
+                    if (counterEl) counterEl.textContent = String(s.realIndex + 1);
+                },
+            },
+        });
     }
 
     // Hero 3D card carousel
@@ -87,10 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             speed: 900,
             coverflowEffect: {
-                rotate: 14,
-                stretch: -8,
-                depth: 160,
-                modifier: 1.15,
+                rotate: 0,
+                stretch: 0,
+                depth: 90,
+                modifier: 1,
                 slideShadows: false,
             },
             pagination: {
@@ -102,6 +103,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 prevEl: '.hero-carousel-prev',
             },
             breakpoints: {
+                768: {
+                    coverflowEffect: {
+                        rotate: 14,
+                        stretch: -8,
+                        depth: 160,
+                        modifier: 1.15,
+                        slideShadows: false,
+                    },
+                },
                 992: {
                     coverflowEffect: {
                         rotate: 22,
