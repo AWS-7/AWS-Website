@@ -1,0 +1,18 @@
+{
+  "name": "AWS-Agni Web Solution",
+  "short_name": "AWS-Agni",
+  "description": "Website Development, Software, Digital Marketing & Restaurant POS Billing",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0b1a",
+  "theme_color": "#7928ca",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

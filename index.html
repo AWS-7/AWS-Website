@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS-Agni Web Solution | Web, Software & POS Solutions</title>
+    <meta name="description" content="AWS-Agni Web Solution — Website Development, Software Development, Logo Design, Poster Design, Digital Marketing & Restaurant Billing POS.">
+    <link rel="canonical" href="https://www.awsagni.com/">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="images/icon-512.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#7928ca">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aws-2026.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "AWS-Agni Web Solution",
+        "description": "Website Development, Software Development, Logo Design, Digital Marketing & Restaurant Billing POS",
+        "url": "https://www.awsagni.com",
+        "telephone": "+919080700642",
+        "email": "agniwebtech@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kamuthi",
+            "addressLocality": "Ramanathapuram",
+            "addressRegion": "Tamil Nadu",
+            "postalCode": "623603",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "9.3833",
+            "longitude": "78.3667"
+        },
+        "openingHours": "Mo-Sa 09:00-19:00",
+        "priceRange": "₹₹",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "6",
+            "bestRating": "5"
+        },
+        "review": [
+            {"@type": "Review", "author": {"@type": "Person", "name": "Sankar"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Super ra iruku bro! Thanks for moving our team to the next level!"},
+            {"@type": "Review", "author": {"@type": "Person", "name": "VinothKumar"}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Fantastic website for FemmeFlex Ladies Gym. Work romba neat-a irukku."}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="aws-preloader" id="awsPreloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <span class="brand-text">AWS-Agni</span>
+                <span class="brand-sub">Web Solution</span>
+            </div>
+            <div class="preloader-spinner">
+                <div class="preloader-ring"></div>
+                <div class="preloader-ring preloader-ring-2"></div>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+            <p class="preloader-status">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Trial Popup -->
+    <div class="trial-popup-overlay" id="trialPopup" aria-hidden="true">
+        <div class="trial-popup" role="dialog" aria-labelledby="popupTitle">
+            <button class="trial-popup-close" id="closePopup" aria-label="Close popup">&times;</button>
+            <div class="trial-popup-badge">Limited Offer 2026</div>
+            <h3 id="popupTitle">AWS-Billing Solution</h3>
+            <p class="trial-popup-price">Get Free Trial — Only <span>₹6,000</span> / Year</p>
+            <ul class="trial-popup-list">
+                <li><i class="fas fa-check-circle"></i> Complete Restaurant POS System</li>
+                <li><i class="fas fa-check-circle"></i> GST Billing & Thermal Print</li>
+                <li><i class="fas fa-check-circle"></i> Inventory & Table Management</li>
+                <li><i class="fas fa-check-circle"></i> 20+ Powerful Features Included</li>
+                <li><i class="fas fa-check-circle"></i> Free Setup & Training Support</li>
+            </ul>
+            <div class="trial-popup-actions">
+                <a href="#aws-billing" class="btn btn-primary btn-glow" id="popupTrialBtn">Get Free Trial</a>
+                <button class="btn btn-secondary" id="popupLaterBtn">Maybe Later</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header fixed-top" id="siteHeader">
+        <div class="container">
+            <nav class="main-navbar">
+                <a class="navbar-brand" href="#">
+                    <span class="brand-text">AWS-Agni</span>
+                    <span class="brand-sub">Web Solution</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav d-none d-lg-flex">
+                    <ul class="desktop-nav-list">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#aws-billing">AWS-Billing</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contact-form">Contact</a></li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary btn-sm-nav">Get Started</a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button class="mobile-nav-toggle d-lg-none" id="mobileNavToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+                    <span class="hamburger-box">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true"></div>
+
+    <!-- Mobile Nav Drawer -->
+    <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+        <div class="mobile-nav-header">
+            <a class="mobile-nav-brand" href="#">
+                <span class="brand-text">AWS-Agni</span>
+                <span class="brand-sub">Web Solution</span>
+            </a>
+            <button class="mobile-nav-close" id="mobileNavClose" type="button" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <nav class="mobile-nav-body">
+            <ul class="mobile-nav-list">
+                <li>
+                    <a href="#about" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-info-circle"></i></span>
+                        <span class="mobile-nav-text">About Us</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#services" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-layer-group"></i></span>
+                        <span class="mobile-nav-text">Services</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#aws-billing" class="mobile-nav-link mobile-nav-link-highlight">
+                        <span class="mobile-nav-icon"><i class="fas fa-cash-register"></i></span>
+                        <span class="mobile-nav-text">AWS-Billing POS</span>
+                        <span class="mobile-nav-badge">₹6000/yr</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-folder-open"></i></span>
+                        <span class="mobile-nav-text">Projects</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonials" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-star"></i></span>
+                        <span class="mobile-nav-text">Testimonials</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact-form" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="mobile-nav-text">Contact</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#faq" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-question-circle"></i></span>
+                        <span class="mobile-nav-text">FAQ</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="mobile-nav-link">
+                        <span class="mobile-nav-icon"><i class="fas fa-newspaper"></i></span>
+                        <span class="mobile-nav-text">Blog</span>
+                        <i class="fas fa-chevron-right mobile-nav-arrow"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="mobile-nav-footer">
+            <a href="#contact-form" class="btn btn-primary btn-glow mobile-nav-cta">Get Started</a>
+            <a href="tel:+919080700642" class="mobile-nav-contact">
+                <i class="fas fa-phone-alt"></i> +91 9080700642
+            </a>
+        </div>
+    </aside>
+
+    <!-- Hero -->
+    <section class="hero hero-2026">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6 order-1 order-lg-2 hero-visual" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="hero-carousel-wrap">
+                        <div class="hero-carousel-glass">
+                            <div class="swiper hero-carousel hero-carousel-3d">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <article class="hero-3d-card">
+                                            <div class="hero-3d-card-inner">
+                                                <img src="https://images.unsplash.com/photo-1626785774573-4b7999f5914b?auto=format&fit=crop&w=1717&q=85" alt="Poster Design — AWS-Agni Web Solution" loading="eager">
+                                                <div class="hero-3d-card-shine" aria-hidden="true"></div>
+                                            </div>
+                                            <span class="hero-3d-card-label">Poster Design</span>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="hero-3d-card">
+                                            <div class="hero-3d-card-inner hero-3d-card-inner--banner">
+                                                <img src="images/hero-website-development.png" alt="Website Development — AWS-Agni Web Solution" loading="eager">
+                                                <div class="hero-3d-card-shine" aria-hidden="true"></div>
+                                            </div>
+                                            <span class="hero-3d-card-label">Website Development</span>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <article class="hero-3d-card">
+                                            <div class="hero-3d-card-inner hero-3d-card-inner--banner">
+                                                <img src="images/hero-logo-design.png" alt="Logo Design — AWS-Agni Web Solution" loading="lazy">
+                                                <div class="hero-3d-card-shine" aria-hidden="true"></div>
+                                            </div>
+                                            <span class="hero-3d-card-label">Logo Design</span>
+                                        </article>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination hero-carousel-pagination"></div>
+                                <div class="swiper-button-prev hero-carousel-prev" aria-label="Previous service"></div>
+                                <div class="swiper-button-next hero-carousel-next" aria-label="Next service"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-2 order-lg-1 hero-content">
+                    <div class="hero-lottie-wrap" data-aos="fade-up">
+                        <div id="heroLottie" class="hero-lottie" aria-hidden="true"></div>
+                    </div>
+                    <span class="hero-badge" data-aos="fade-up">2026 Digital Solutions</span>
+                    <h1 data-aos="fade-up" data-aos-delay="100">
+                        Build Your Business with <span class="text-gradient">AWS-Agni Web Solution</span>
+                    </h1>
+                    <p class="lead" data-aos="fade-up" data-aos-delay="200">
+                        Website Development, Software Development, Logo & Poster Design, Digital Marketing, and Restaurant Billing POS — all in one trusted partner.
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#services" class="btn btn-primary">Explore Services <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#aws-billing" class="btn btn-outline-light">AWS-Billing POS</a>
+                    </div>
+                    <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat">
+                            <h3><span class="stat-counter" data-target="8" data-suffix="+">0</span></h3>
+                            <p>Live Projects</p>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="stat-counter" data-target="5">0</span></h3>
+                            <p>Core Services</p>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="stat-counter" data-target="20" data-suffix="+">0</span></h3>
+                            <p>POS Features</p>
+                        </div>
+                        <div class="stat">
+                            <h3><span class="stat-counter" data-target="100" data-suffix="%">0</span></h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="particles-container" id="particles-js"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-visual">
+                        <div class="about-icon-grid">
+                            <div class="about-icon-item"><i class="fas fa-code"></i></div>
+                            <div class="about-icon-item"><i class="fas fa-palette"></i></div>
+                            <div class="about-icon-item"><i class="fas fa-chart-line"></i></div>
+                            <div class="about-icon-item"><i class="fas fa-receipt"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <span class="section-tag">About Us</span>
+                    <h2>Who We Are</h2>
+                    <p class="about-text">
+                        <strong>AWS-Agni Web Solution</strong> is a modern digital agency focused on helping businesses grow online and offline. From stunning websites and custom software to creative branding and smart restaurant billing systems — we deliver end-to-end solutions built for 2026 and beyond.
+                    </p>
+                    <p class="about-text">
+                        With <strong>8+ successfully completed projects</strong>, we combine creative design, clean code, and reliable support to give every client a professional digital presence.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item"><i class="fas fa-check"></i> Client-Focused Approach</div>
+                        <div class="highlight-item"><i class="fas fa-check"></i> Affordable Pricing</div>
+                        <div class="highlight-item"><i class="fas fa-check"></i> On-Time Delivery</div>
+                        <div class="highlight-item"><i class="fas fa-check"></i> 24/7 Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="features py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">What We Offer</span>
+                <h2>Our Services</h2>
+                <p>Professional digital solutions tailored for your business growth</p>
+            </div>
+            <div class="row g-4 services-row">
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon lottie-icon" data-lottie="web"></div>
+                        <h3>Website & Software Development</h3>
+                        <p>Custom websites and software applications built with modern technologies for speed, security, and scalability.</p>
+                        <a href="service.html#website-software" class="btn-view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon lottie-icon" data-lottie="poster"></div>
+                        <h3>Poster Design</h3>
+                        <p>Eye-catching poster designs for events, promotions, social media, and marketing campaigns.</p>
+                        <a href="service.html#poster-design" class="btn-view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon lottie-icon" data-lottie="logo"></div>
+                        <h3>Logo Design</h3>
+                        <p>Unique, memorable brand logos that represent your business identity professionally.</p>
+                        <a href="service.html#logo-design" class="btn-view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon lottie-icon" data-lottie="marketing"></div>
+                        <h3>Digital Marketing</h3>
+                        <p>Social media marketing, SEO, and online campaigns to boost your brand visibility and reach.</p>
+                        <a href="service.html#digital-marketing" class="btn-view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card h-100">
+                        <div class="feature-icon lottie-icon" data-lottie="pos"></div>
+                        <h3>Restaurant Billing POS</h3>
+                        <p>Complete restaurant POS billing system with yearly rent plan — simple, fast, and reliable billing.</p>
+                        <a href="service.html#restaurant-pos" class="btn-view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="feature-card h-100 feature-card-highlight">
+                        <div class="feature-icon lottie-icon" data-lottie="support"></div>
+                        <h3>Support & Maintenance</h3>
+                        <p>Ongoing technical support, updates, and maintenance for all our web, software, and POS solutions.</p>
+                        <a href="service.html#support-maintenance" class="btn-view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWS-Billing Solutions -->
+    <section id="aws-billing" class="aws-billing-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 aws-billing-info" data-aos="fade-right">
+                    <span class="section-tag">Our Product</span>
+                    <h2>AWS-Billing Solutions</h2>
+                    <p class="billing-intro">
+                        A powerful Restaurant Billing POS system designed for fast billing, inventory control, and daily business reports — all at an affordable yearly plan.
+                    </p>
+                    <div class="billing-price-card">
+                        <div class="price-tag">Get Free Trial</div>
+                        <div class="price-amount">₹6,000 <span>/ Year</span></div>
+                        <p>Complete POS setup with training & support included</p>
+                        <a href="#contact-form" class="btn btn-primary btn-glow w-100">Start Free Trial</a>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <h3 class="features-title">20+ Features Included</h3>
+                    <div class="pos-features-grid pos-features-desktop">
+                        <div class="pos-feature"><i class="fas fa-file-invoice"></i> GST Billing</div>
+                        <div class="pos-feature"><i class="fas fa-print"></i> Thermal Bill Print</div>
+                        <div class="pos-feature"><i class="fas fa-boxes"></i> Inventory Management</div>
+                        <div class="pos-feature"><i class="fas fa-chair"></i> Table Management</div>
+                        <div class="pos-feature"><i class="fas fa-utensils"></i> Kitchen Display</div>
+                        <div class="pos-feature"><i class="fas fa-chart-bar"></i> Daily Sales Report</div>
+                        <div class="pos-feature"><i class="fas fa-calendar-alt"></i> Monthly Analytics</div>
+                        <div class="pos-feature"><i class="fas fa-users"></i> Customer Database</div>
+                        <div class="pos-feature"><i class="fas fa-tags"></i> Discount & Offers</div>
+                        <div class="pos-feature"><i class="fas fa-wallet"></i> Multi-Payment Mode</div>
+                        <div class="pos-feature"><i class="fas fa-barcode"></i> Barcode Scanning</div>
+                        <div class="pos-feature"><i class="fas fa-receipt"></i> Receipt Customization</div>
+                        <div class="pos-feature"><i class="fas fa-percent"></i> Tax Configuration</div>
+                        <div class="pos-feature"><i class="fas fa-money-bill-wave"></i> Expense Tracking</div>
+                        <div class="pos-feature"><i class="fas fa-user-tie"></i> Staff Management</div>
+                        <div class="pos-feature"><i class="fas fa-divide"></i> Split Billing</div>
+                        <div class="pos-feature"><i class="fas fa-pause-circle"></i> Hold & Resume Orders</div>
+                        <div class="pos-feature"><i class="fas fa-exclamation-triangle"></i> Low Stock Alerts</div>
+                        <div class="pos-feature"><i class="fas fa-list"></i> Category Management</div>
+                        <div class="pos-feature"><i class="fas fa-chart-pie"></i> Item-wise Reports</div>
+                        <div class="pos-feature"><i class="fas fa-database"></i> Offline Backup</div>
+                        <div class="pos-feature"><i class="fas fa-file-export"></i> Data Export (Excel/PDF)</div>
+                        <div class="pos-feature"><i class="fas fa-lock"></i> Role-based Access</div>
+                        <div class="pos-feature"><i class="fas fa-sms"></i> SMS Invoice</div>
+                    </div>
+                    <div class="pos-features-mobile-scroll d-lg-none">
+                        <div class="pos-scroll-row">
+                            <div class="pos-scroll-track pos-scroll-left">
+                                <div class="pos-feature"><i class="fas fa-file-invoice"></i> GST Billing</div>
+                                <div class="pos-feature"><i class="fas fa-print"></i> Thermal Bill Print</div>
+                                <div class="pos-feature"><i class="fas fa-boxes"></i> Inventory Management</div>
+                                <div class="pos-feature"><i class="fas fa-chair"></i> Table Management</div>
+                                <div class="pos-feature"><i class="fas fa-utensils"></i> Kitchen Display</div>
+                                <div class="pos-feature"><i class="fas fa-chart-bar"></i> Daily Sales Report</div>
+                                <div class="pos-feature"><i class="fas fa-calendar-alt"></i> Monthly Analytics</div>
+                                <div class="pos-feature"><i class="fas fa-users"></i> Customer Database</div>
+                                <div class="pos-feature"><i class="fas fa-tags"></i> Discount & Offers</div>
+                                <div class="pos-feature"><i class="fas fa-wallet"></i> Multi-Payment Mode</div>
+                                <div class="pos-feature"><i class="fas fa-barcode"></i> Barcode Scanning</div>
+                                <div class="pos-feature"><i class="fas fa-receipt"></i> Receipt Customization</div>
+                                <div class="pos-feature"><i class="fas fa-file-invoice"></i> GST Billing</div>
+                                <div class="pos-feature"><i class="fas fa-print"></i> Thermal Bill Print</div>
+                                <div class="pos-feature"><i class="fas fa-boxes"></i> Inventory Management</div>
+                                <div class="pos-feature"><i class="fas fa-chair"></i> Table Management</div>
+                                <div class="pos-feature"><i class="fas fa-utensils"></i> Kitchen Display</div>
+                                <div class="pos-feature"><i class="fas fa-chart-bar"></i> Daily Sales Report</div>
+                                <div class="pos-feature"><i class="fas fa-calendar-alt"></i> Monthly Analytics</div>
+                                <div class="pos-feature"><i class="fas fa-users"></i> Customer Database</div>
+                                <div class="pos-feature"><i class="fas fa-tags"></i> Discount & Offers</div>
+                                <div class="pos-feature"><i class="fas fa-wallet"></i> Multi-Payment Mode</div>
+                                <div class="pos-feature"><i class="fas fa-barcode"></i> Barcode Scanning</div>
+                                <div class="pos-feature"><i class="fas fa-receipt"></i> Receipt Customization</div>
+                            </div>
+                        </div>
+                        <div class="pos-scroll-row">
+                            <div class="pos-scroll-track pos-scroll-right">
+                                <div class="pos-feature"><i class="fas fa-percent"></i> Tax Configuration</div>
+                                <div class="pos-feature"><i class="fas fa-money-bill-wave"></i> Expense Tracking</div>
+                                <div class="pos-feature"><i class="fas fa-user-tie"></i> Staff Management</div>
+                                <div class="pos-feature"><i class="fas fa-divide"></i> Split Billing</div>
+                                <div class="pos-feature"><i class="fas fa-pause-circle"></i> Hold & Resume Orders</div>
+                                <div class="pos-feature"><i class="fas fa-exclamation-triangle"></i> Low Stock Alerts</div>
+                                <div class="pos-feature"><i class="fas fa-list"></i> Category Management</div>
+                                <div class="pos-feature"><i class="fas fa-chart-pie"></i> Item-wise Reports</div>
+                                <div class="pos-feature"><i class="fas fa-database"></i> Offline Backup</div>
+                                <div class="pos-feature"><i class="fas fa-file-export"></i> Data Export</div>
+                                <div class="pos-feature"><i class="fas fa-lock"></i> Role-based Access</div>
+                                <div class="pos-feature"><i class="fas fa-sms"></i> SMS Invoice</div>
+                                <div class="pos-feature"><i class="fas fa-percent"></i> Tax Configuration</div>
+                                <div class="pos-feature"><i class="fas fa-money-bill-wave"></i> Expense Tracking</div>
+                                <div class="pos-feature"><i class="fas fa-user-tie"></i> Staff Management</div>
+                                <div class="pos-feature"><i class="fas fa-divide"></i> Split Billing</div>
+                                <div class="pos-feature"><i class="fas fa-pause-circle"></i> Hold & Resume Orders</div>
+                                <div class="pos-feature"><i class="fas fa-exclamation-triangle"></i> Low Stock Alerts</div>
+                                <div class="pos-feature"><i class="fas fa-list"></i> Category Management</div>
+                                <div class="pos-feature"><i class="fas fa-chart-pie"></i> Item-wise Reports</div>
+                                <div class="pos-feature"><i class="fas fa-database"></i> Offline Backup</div>
+                                <div class="pos-feature"><i class="fas fa-file-export"></i> Data Export</div>
+                                <div class="pos-feature"><i class="fas fa-lock"></i> Role-based Access</div>
+                                <div class="pos-feature"><i class="fas fa-sms"></i> SMS Invoice</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POS Demo Gallery -->
+            <div class="pos-demo-section mt-5 pt-4" data-aos="fade-up">
+                <h3><i class="fas fa-desktop me-2"></i> POS Demo Screens</h3>
+                <div class="pos-demo-grid">
+                    <div class="pos-demo-card">
+                        <div class="pos-demo-screen"><i class="fas fa-file-invoice-dollar"></i><span>GST Billing Screen</span></div>
+                        <h4>Fast GST Billing</h4>
+                    </div>
+                    <div class="pos-demo-card">
+                        <div class="pos-demo-screen"><i class="fas fa-utensils"></i><span>Kitchen Order Ticket</span></div>
+                        <h4>KOT to Kitchen</h4>
+                    </div>
+                    <div class="pos-demo-card">
+                        <div class="pos-demo-screen"><i class="fas fa-chart-line"></i><span>Sales Dashboard</span></div>
+                        <h4>Daily Reports</h4>
+                    </div>
+                    <div class="pos-demo-card">
+                        <div class="pos-demo-screen"><i class="fas fa-boxes"></i><span>Stock Manager</span></div>
+                        <h4>Inventory Control</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="pos-comparison-section mt-5" data-aos="fade-up">
+                <h3><i class="fas fa-balance-scale me-2"></i> Why AWS-Billing Wins</h3>
+                <div class="pos-comparison-wrap">
+                    <table class="pos-comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Manual Billing</th>
+                                <th>Generic POS</th>
+                                <th class="highlight-col">AWS-Billing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>GST Auto Billing</td><td class="no"><i class="fas fa-times"></i></td><td class="partial"><i class="fas fa-minus"></i></td><td class="highlight-col yes"><i class="fas fa-check"></i></td></tr>
+                            <tr><td>Thermal Print</td><td class="no"><i class="fas fa-times"></i></td><td class="yes"><i class="fas fa-check"></i></td><td class="highlight-col yes"><i class="fas fa-check"></i></td></tr>
+                            <tr><td>KOT / Kitchen Display</td><td class="no"><i class="fas fa-times"></i></td><td class="partial"><i class="fas fa-minus"></i></td><td class="highlight-col yes"><i class="fas fa-check"></i></td></tr>
+                            <tr><td>Inventory & Reports</td><td class="no"><i class="fas fa-times"></i></td><td class="yes"><i class="fas fa-check"></i></td><td class="highlight-col yes"><i class="fas fa-check"></i></td></tr>
+                            <tr><td>Local Setup & Training</td><td class="no"><i class="fas fa-times"></i></td><td class="no"><i class="fas fa-times"></i></td><td class="highlight-col yes"><i class="fas fa-check"></i></td></tr>
+                            <tr><td>Yearly Cost</td><td>Low</td><td>₹12,000+</td><td class="highlight-col"><strong>₹6,000/yr</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Trial Form + Brochure -->
+            <div class="row g-4 mt-2" id="pos-trial-form">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <div class="pos-trial-card">
+                        <h3><i class="fas fa-gift me-2"></i> Start Free Trial</h3>
+                        <p>Restaurant name & phone — we'll set up your AWS-Billing demo within 24 hours.</p>
+                        <form id="posTrialForm" class="pos-trial-form" action="https://formspree.io/f/xanokzkq" method="POST">
+                            <input type="hidden" name="_subject" value="AWS-Billing POS Free Trial Request">
+                            <input type="hidden" name="form_type" value="pos-trial">
+                            <div class="form-row"><input type="text" name="name" placeholder="Your Name" required></div>
+                            <div class="form-row"><input type="text" name="restaurant" placeholder="Restaurant Name" required></div>
+                            <div class="form-row"><input type="tel" name="phone" placeholder="Phone Number" required></div>
+                            <button type="submit" class="btn btn-primary btn-glow w-100">Request Free Trial</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="brochure-card">
+                        <h3><i class="fas fa-file-pdf me-2"></i> Download Brochure</h3>
+                        <p>Share AWS-Billing features with your team via WhatsApp or print.</p>
+                        <ul class="brochure-features">
+                            <li><i class="fas fa-check"></i> All 20+ POS features listed</li>
+                            <li><i class="fas fa-check"></i> ₹6,000/year pricing details</li>
+                            <li><i class="fas fa-check"></i> Print-ready one-page format</li>
+                        </ul>
+                        <div class="brochure-actions">
+                            <a href="assets/brochure/AWS-Billing-POS-Brochure.pdf" download="AWS-Billing-POS-Brochure.pdf" class="btn btn-primary btn-glow"><i class="fas fa-download me-1"></i> Download PDF</a>
+                            <a href="assets/brochure/aws-billing-brochure.html" target="_blank" class="btn btn-outline-light"><i class="fas fa-eye me-1"></i> Preview</a>
+                            <a href="https://wa.me/919080700642?text=Hi%2C%20send%20me%20AWS-Billing%20POS%20brochure" target="_blank" rel="noopener" class="btn btn-outline-light"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POS Onboarding Checklist -->
+            <div class="pos-checklist-section mt-5" data-aos="fade-up">
+                <div class="pos-checklist-card">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-7">
+                            <h3><i class="fas fa-clipboard-check me-2"></i> POS Onboarding Checklist</h3>
+                            <p class="mb-3">New restaurant? Follow our step-by-step checklist — from free trial to go-live in 7 easy steps.</p>
+                            <ul class="checklist-preview">
+                                <li><i class="fas fa-check"></i> Free trial signup & demo</li>
+                                <li><i class="fas fa-check"></i> Menu, tax & printer setup</li>
+                                <li><i class="fas fa-check"></i> Staff training & go-live support</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-5 text-lg-end">
+                            <a href="assets/brochure/pos-onboarding-checklist.html" target="_blank" class="btn btn-primary btn-glow me-2 mb-2"><i class="fas fa-download me-1"></i> View Checklist</a>
+                            <a href="assets/brochure/pos-onboarding-checklist.html?print=1" target="_blank" class="btn btn-outline-light mb-2"><i class="fas fa-print me-1"></i> Print</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects-section py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Our Work</span>
+                <h2>Completed Projects</h2>
+                <p>8 live websites delivered for clients across fitness, legal, business & travel</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.femmeflexladiesgym.com" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image img-skeleton-wrap">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://www.femmeflexladiesgym.com" alt="Femme Flex Ladies Gym & Fitness" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Fitness</span>
+                                <h4>Femme Flex Ladies Gym & Fitness</h4>
+                                <p>femmeflexladiesgym.com</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+                    <a href="https://www.lumbinilawassociates.in" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://www.lumbinilawassociates.in" alt="Lumbini Law Associates" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589829545855-d5edc945909a?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Legal</span>
+                                <h4>Lumbini Law Associates</h4>
+                                <p>lumbinilawassociates.in</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://cult-fitness-hub-tamil-nadu.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://cult-fitness-hub-tamil-nadu.vercel.app/" alt="Cult Fitness Hub" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Fitness</span>
+                                <h4>Cult Fitness Hub</h4>
+                                <p>cult-fitness-hub-tamil-nadu.vercel.app</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="250">
+                    <a href="https://www.vselectrical.in" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://www.vselectrical.in" alt="VS Electrical" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Electrical</span>
+                                <h4>VS Electrical</h4>
+                                <p>vselectrical.in</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://www.lenapromoterspvtltd.com" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://www.lenapromoterspvtltd.com" alt="Lena Promoters Pvt Ltd" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Real Estate</span>
+                                <h4>Lena Promoters Pvt Ltd</h4>
+                                <p>lenapromoterspvtltd.com</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="350">
+                    <a href="https://www.djphotographykaraikudi.com" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://www.djphotographykaraikudi.com" alt="DJ Photography" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Photography</span>
+                                <h4>DJ Photography</h4>
+                                <p>djphotographykaraikudi.com</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://ironempirefitness.in" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://ironempirefitness.in" alt="Iron Empire Fitness Gym" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Fitness</span>
+                                <h4>Iron Empire Fitness Gym</h4>
+                                <p>ironempirefitness.in</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="450">
+                    <a href="https://www.blessingstoursandtravels.in" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://image.thum.io/get/width/600/crop/400/noanimate/https://www.blessingstoursandtravels.in" alt="Blessings Tours and Travels" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80'">
+                                <span class="project-visit"><i class="fas fa-external-link-alt"></i> Visit Site</span>
+                            </div>
+                            <div class="project-body">
+                                <span class="project-tag">Travel</span>
+                                <h4>Blessings Tours and Travels</h4>
+                                <p>blessingstoursandtravels.in</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="benefits" class="benefits py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Choose AWS</h2>
+                <p>The advantages that set us apart from the rest</p>
+            </div>
+            <div class="row g-4 benefits-row">
+                <div class="col-12 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="benefit-card h-100">
+                        <div class="benefit-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Fast Delivery</h3>
+                        <p>Quick turnaround without compromising on quality.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="benefit-card h-100">
+                        <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Secure & Reliable</h3>
+                        <p>Safe, stable solutions you can trust every day.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="benefit-card h-100">
+                        <div class="benefit-icon"><i class="fas fa-rupee-sign"></i></div>
+                        <h3>Affordable Plans</h3>
+                        <p>Budget-friendly pricing for startups and businesses.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="benefit-card h-100">
+                        <div class="benefit-icon"><i class="fas fa-headset"></i></div>
+                        <h3>24/7 Support</h3>
+                        <p>Always available when you need help or updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta py-5">
+        <div class="container">
+            <div class="cta-content text-center" data-aos="fade-up">
+                <h2>Ready to Transform Your Business?</h2>
+                <p class="lead">Let's build your website, software, or POS system today.</p>
+                <a href="#contact-form" class="btn btn-primary btn-lg">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Client Testimonials</h2>
+                <p>What our valued clients say about us</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="testimonials-wrapper" data-aos="fade-up" data-aos-delay="100">
+                        <div class="swiper testimonials-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card-2026">
+                                        <div class="testimonial-top">
+                                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial-text">"Super ra iruku bro! I like it, my team also like it. Thanks for moving our team to the next level with this app!"</p>
+                                        <div class="testimonial-author">
+                                            <div class="author-avatar">S</div>
+                                            <div class="author-info">
+                                                <h4>Sankar</h4>
+                                                <span>Owner, Iron Empire Fitness Gym</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card-2026">
+                                        <div class="testimonial-top">
+                                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial-text">"Big thanks to Vignesh for creating a fantastic website for my FemmeFlex Ladies Gym. Work romba neat-a irukku, approach-um romba professional. Gym-oda requirements ellam nalla cover panni irukkaru. Website kaga yaaravudhu search pannitu irundha, kandippa Vignesh-a (AWS-Agni Web Solution) approach pannunga!"</p>
+                                        <div class="testimonial-author">
+                                            <div class="author-avatar">V</div>
+                                            <div class="author-info">
+                                                <h4>VinothKumar</h4>
+                                                <span>Owner, Femme Flex Ladies Gym & Fitness</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card-2026">
+                                        <div class="testimonial-top">
+                                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial-text">"Vignesh, your hard work and dedication are highly appreciated. The website you designed for Lena Promoters Pvt. Ltd. is excellent and perfectly reflects our brand. The design is clean, professional, and well-structured, with a smooth user experience and attractive visual appeal. Every section is thoughtfully organized, making it easy for visitors to navigate and find information. Your attention to detail and commitment to quality are clearly visible throughout the website. Thank you for delivering such a perfect website and for your outstanding efforts. Keep up the great work!"</p>
+                                        <div class="testimonial-author">
+                                            <div class="author-avatar">P</div>
+                                            <div class="author-info">
+                                                <h4>Pavithra</h4>
+                                                <span>HR, Lena Promoters Pvt Ltd</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card-2026">
+                                        <div class="testimonial-top">
+                                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial-text">"Vignesh did an incredible job developing the website for Cult Fitness Hub. He perfectly captured the high-energy, professional atmosphere of our gym and translated it into a seamless digital experience. Highly recommended — great experience!"</p>
+                                        <div class="testimonial-author">
+                                            <div class="author-avatar">F</div>
+                                            <div class="author-info">
+                                                <h4>Flavin Martis</h4>
+                                                <span>Owner, Cult Fitness Hub</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card-2026">
+                                        <div class="testimonial-top">
+                                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial-text">"Payment mukiyam illa, work satisfied-a irukka important — appove nee sonniyoo, naan full-a trust panniten. Payment innaiku varum, nalaiku pogum, aana work-la correct-a irukanum nu ninaikiringala — adhu than vera level, Vignesh! Neraya peru website develop panna sollirundhanga, enakku idea illa. Naan eppadi trust panninen? Because of your positive approach!"</p>
+                                        <div class="testimonial-author">
+                                            <div class="author-avatar">D</div>
+                                            <div class="author-info">
+                                                <h4>Dass</h4>
+                                                <span>Owner, DJ Photography</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="testimonial-card-2026">
+                                        <div class="testimonial-top">
+                                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                                            <div class="testimonial-stars">
+                                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                        <p class="testimonial-text">"We are very satisfied with the services provided by AWS. Their team completed the work professionally, on time, and with great attention to detail. Communication was clear throughout the process, and they provided excellent support whenever required. We appreciate their commitment to quality and would highly recommend AWS to anyone looking for reliable and professional services."</p>
+                                        <div class="testimonial-author">
+                                            <div class="author-avatar">Se</div>
+                                            <div class="author-info">
+                                                <h4>Senthilmani</h4>
+                                                <span>Owner, VS Electrical</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination testimonials-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our services, delivery & pricing</p>
+            </div>
+            <div class="faq-list" data-aos="fade-up">
+                <div class="faq-item">
+                    <button class="faq-question" type="button">How long does website delivery take? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Basic business websites: 7–14 days. Custom software or e-commerce: 3–6 weeks depending on scope. We share a clear timeline before starting.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">How does AWS-Billing POS setup work? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Free trial first → on-site/remote installation → menu & tax setup → staff training → go live. Full support included at ₹6,000/year.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">What are the payment terms? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Typically 50% advance to start, 50% on delivery. AWS-Billing POS is yearly at ₹6,000. Flexible plans available for startups.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Do you provide support after delivery? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes! We offer 24/7 support, maintenance packages, and free minor updates for the first month after launch.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" type="button">Which areas do you serve? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Pudukottai, Kamuthi, Ramanathapuram and all of Tamil Nadu. Remote projects accepted across India.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section id="blog" class="py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">Blog & Tips</span>
+                <h2>Latest Articles</h2>
+                <p>SEO tips, POS guides & web development insights</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <article class="blog-card h-100">
+                        <div class="blog-card-meta"><span>POS Billing</span><span>5 min</span></div>
+                        <h3>Top 10 Benefits of Restaurant POS Software</h3>
+                        <p>Why Tamil Nadu restaurant owners are switching to AWS-Billing POS.</p>
+                        <a href="blog.html?post=restaurant-pos-benefits" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+                    <article class="blog-card h-100">
+                        <div class="blog-card-meta"><span>SEO</span><span>6 min</span></div>
+                        <h3>Website SEO Tips for Small Businesses</h3>
+                        <p>Rank on Google for local searches in Pudukottai & Ramanathapuram.</p>
+                        <a href="blog.html?post=website-seo-tips" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <article class="blog-card h-100">
+                        <div class="blog-card-meta"><span>POS Guide</span><span>4 min</span></div>
+                        <h3>How to Choose the Right Restaurant POS</h3>
+                        <p>Manual billing vs generic POS vs AWS-Billing comparison.</p>
+                        <a href="blog.html?post=choose-right-pos" class="blog-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="blog.html" class="btn btn-outline-light">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="newsletter-section py-5">
+        <div class="container">
+            <div class="newsletter-box" data-aos="fade-up">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <span class="section-tag">Stay Updated</span>
+                        <h2>Subscribe to Our Newsletter</h2>
+                        <p>Get web tips, POS updates & exclusive offers from AWS-Agni Web Solution.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form id="newsletterForm" class="newsletter-form" action="https://formspree.io/f/xanokzkq" method="POST">
+                            <input type="hidden" name="_subject" value="Newsletter Subscription">
+                            <div class="newsletter-input-group">
+                                <input type="email" name="email" id="newsletterEmail" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn btn-primary btn-glow">Subscribe</button>
+                            </div>
+                            <p class="newsletter-note"><i class="fas fa-lock"></i> No spam. Unsubscribe anytime.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-form" class="contact-form-section py-5">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you — send us a message today</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form-wrapper">
+                        <form action="https://formspree.io/f/xanokzkq" method="POST" id="contactForm" class="contact-form">
+                            <input type="hidden" name="_subject" value="New Contact Message — AWS-Agni Website">
+                            <input type="hidden" name="form_type" value="contact">
+                            <input type="hidden" name="_replyto" id="contactReplyTo" value="">
+                            <div class="form-group floating-label">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="form-group floating-label">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="form-group floating-label">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            <div class="form-group floating-label">
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                                <label for="message">Your Message</label>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-glow">
+                                    Send Message <i class="fas fa-paper-plane ms-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-name">
+                        <span class="brand-text">AWS-Agni</span>
+                        <span class="brand-sub">Web Solution</span>
+                    </div>
+                    <p class="footer-description">Your trusted partner for Website Development, Software Development, Logo & Poster Design, Digital Marketing, and Restaurant Billing POS solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#aws-billing"><i class="fas fa-chevron-right"></i> AWS-Billing</a></li>
+                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="#contact-form"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="service.html#website-software"><i class="fas fa-code"></i> Website & Software Development</a></li>
+                        <li><a href="service.html#poster-design"><i class="fas fa-image"></i> Poster Design</a></li>
+                        <li><a href="service.html#logo-design"><i class="fas fa-pen-nib"></i> Logo Design</a></li>
+                        <li><a href="service.html#digital-marketing"><i class="fas fa-bullhorn"></i> Digital Marketing</a></li>
+                        <li><a href="service.html#restaurant-pos"><i class="fas fa-cash-register"></i> Restaurant Billing POS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Pudukottai, Kamuthi, Ramanathapuram — 623603</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919080700642">+91 9080700642</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:agniwebtech@gmail.com">agniwebtech@gmail.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon–Sat: 9AM – 7PM</li>
+                        <li><i class="fas fa-globe"></i> www.awsagni.com</li>
+                    </ul>
+                    <a href="https://maps.google.com/?q=AWS-Agni+Web+Solution+Kamuthi+Ramanathapuram+623603" target="_blank" rel="noopener" class="footer-maps-link"><i class="fas fa-map-marked-alt"></i> Find us on Google Maps</a>
+                    <a href="https://maps.google.com/?q=AWS-Agni+Web+Solution+Kamuthi&entry=tts" target="_blank" rel="noopener" class="footer-maps-link d-block"><i class="fas fa-star"></i> Leave a Google Review</a>
+                    <div class="local-seo-links">
+                        <a href="web-design-pudukottai.html">Web Design Pudukottai</a>
+                        <a href="pos-software-ramanathapuram.html">POS Ramanathapuram</a>
+                    </div>
+                    <div class="notification-opt-in">
+                        <button type="button" id="enableNotifications">Enable Offer Notifications</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="portal.html">Client Portal</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AWS-Agni Web Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919080700642?text=Hi%20AWS-Agni%2C%20I%20need%20help%20with%20" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- Back to Top -->
+    <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-mobile-cta" id="stickyMobileCta">
+        <a href="tel:+919080700642" data-sticky-call class="sticky-call"><i class="fas fa-phone-alt"></i> Call</a>
+        <a href="#" data-sticky-wa class="sticky-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="#contact-form" class="sticky-quote"><i class="fas fa-envelope"></i> Get Quote</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/site-config.js"></script>
+    <script src="js/whatsapp-helper.js"></script>
+    <script src="js/dashboard-data.js"></script>
+    <script src="js/lottie-init.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/features.js"></script>
+    <!-- Firebase: add js/firebase-config.js with your keys, then uncomment below -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-messaging-compat.js"></script> -->
+    <!-- <script src="js/firebase-config.js"></script> -->
+    <!-- <script src="js/notifications.js"></script> -->
+    <!-- Tawk.to: set tawkPropertyId in js/site-config.js -->
+</body>
+</html>

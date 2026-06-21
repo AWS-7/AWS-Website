@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | AWS-Agni Web Solution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aws-2026.css">
+    <link rel="stylesheet" href="css/service-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="service-page">
+
+    <!-- Preloader -->
+    <div class="aws-preloader" id="awsPreloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <span class="brand-text">AWS-Agni</span>
+                <span class="brand-sub">Web Solution</span>
+            </div>
+            <div class="preloader-spinner">
+                <div class="preloader-ring"></div>
+                <div class="preloader-ring preloader-ring-2"></div>
+            </div>
+            <div class="preloader-progress">
+                <div class="preloader-progress-bar"></div>
+            </div>
+            <p class="preloader-status">Loading...</p>
+        </div>
+    </div>
+
+    <header class="site-header fixed-top scrolled" id="siteHeader">
+        <div class="container">
+            <nav class="main-navbar">
+                <a class="navbar-brand" href="index.html">
+                    <span class="brand-text">AWS-Agni</span>
+                    <span class="brand-sub">Web Solution</span>
+                </a>
+                <div class="desktop-nav d-none d-lg-flex">
+                    <ul class="desktop-nav-list">
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#aws-billing">AWS-Billing</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#contact-form">Contact</a></li>
+                    </ul>
+                    <a href="index.html#contact-form" class="btn btn-primary btn-sm-nav">Get Started</a>
+                </div>
+                <a href="index.html#services" class="btn btn-primary btn-sm-nav d-lg-none">All Services</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="service-detail-page">
+        <div class="container">
+            <section class="service-hero">
+                <a href="index.html#services" class="service-back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Services
+                </a>
+                <div class="service-hero-icon" id="serviceHeroIcon"><i class="fas fa-laptop-code"></i></div>
+                <p class="service-hero-tagline" id="serviceHeroTagline">Loading...</p>
+                <h1 id="serviceHeroTitle">Service Details</h1>
+                <p class="service-hero-intro" id="serviceHeroIntro"></p>
+            </section>
+
+            <div class="service-detail-grid">
+                <div class="service-detail-card">
+                    <h2><i class="fas fa-list-ul me-2"></i> What's Included</h2>
+                    <ul class="service-features-list" id="serviceFeaturesList"></ul>
+                </div>
+                <div class="service-detail-card">
+                    <h2><i class="fas fa-route me-2"></i> Our Process</h2>
+                    <div class="process-grid" id="serviceProcessGrid"></div>
+                </div>
+                <div class="service-detail-card span-full service-cta-box">
+                    <p>Ready to get started? Contact AWS-Agni Web Solution today for a free consultation.</p>
+                    <a href="index.html#contact-form" class="btn btn-primary btn-glow" id="serviceCtaBtn">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 AWS-Agni Web Solution. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/preloader.js"></script>
+    <script src="js/services-data.js"></script>
+    <script src="js/service-page.js"></script>
+</body>
+</html>

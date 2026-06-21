@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS-Billing POS Brochure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        @page { size: A4; margin: 0; }
+
+        html, body {
+            font-family: 'Onest', 'Segoe UI', sans-serif;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        .page:last-child { page-break-after: auto; }
+
+        /* ===== PAGE 1 — COVER ===== */
+        .page-cover {
+            background: linear-gradient(145deg, #0a0b1a 0%, #150f28 45%, #1a0a2e 100%);
+            color: #fff;
+            padding: 14mm 16mm;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cover-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .brand-block .brand-name {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 22pt;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c084fc, #f472b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+
+        .brand-block .brand-sub {
+            font-size: 7pt;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            margin-top: 2mm;
+        }
+
+        .year-badge {
+            font-size: 7pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 3mm 5mm;
+            border-radius: 50px;
+            border: 1px solid rgba(192,132,252,0.5);
+            color: #e879f9;
+            text-transform: uppercase;
+        }
+
+        .cover-hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8mm 0;
+        }
+
+        .product-tag {
+            display: inline-block;
+            font-size: 8pt;
+            font-weight: 600;
+            color: #22d3ee;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 4mm;
+        }
+
+        .cover-title {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 36pt;
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -1px;
+            margin-bottom: 5mm;
+        }
+
+        .cover-title span {
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .cover-desc {
+            font-size: 10.5pt;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.65);
+            max-width: 130mm;
+            margin-bottom: 10mm;
+        }
+
+        .price-card {
+            background: linear-gradient(135deg, rgba(121,40,202,0.35), rgba(255,0,128,0.2));
+            border: 1px solid rgba(192,132,252,0.35);
+            border-radius: 14px;
+            padding: 8mm 10mm;
+            display: inline-flex;
+            align-items: center;
+            gap: 8mm;
+            max-width: 100%;
+        }
+
+        .price-card .amount {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 28pt;
+            font-weight: 800;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        .price-card .amount small {
+            font-size: 11pt;
+            font-weight: 600;
+            opacity: 0.75;
+        }
+
+        .price-card .details p {
+            font-size: 9pt;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.5;
+        }
+
+        .price-card .details .trial {
+            color: #4ade80;
+            font-weight: 700;
+            font-size: 8.5pt;
+            margin-top: 1mm;
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4mm;
+            margin-top: 10mm;
+        }
+
+        .highlight-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 5mm 4mm;
+            text-align: center;
+        }
+
+        .highlight-box .num {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 18pt;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c084fc, #22d3ee);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .highlight-box .lbl {
+            font-size: 7pt;
+            color: rgba(255,255,255,0.5);
+            margin-top: 1mm;
+            line-height: 1.3;
+        }
+
+        .cover-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 6mm;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .cover-bottom p {
+            font-size: 8pt;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .cover-glow {
+            position: absolute;
+            width: 120mm;
+            height: 120mm;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(121,40,202,0.25) 0%, transparent 70%);
+            top: 30mm;
+            right: -20mm;
+            pointer-events: none;
+        }
+
+        /* ===== PAGE 2 — FEATURES ===== */
+        .page-features {
+            background: #fafafa;
+            color: #1a1a2e;
+            padding: 12mm 14mm;
+        }
+
+        .features-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8mm;
+            padding-bottom: 5mm;
+            border-bottom: 2px solid #7928ca;
+        }
+
+        .features-header h2 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 16pt;
+            font-weight: 800;
+            color: #7928ca;
+        }
+
+        .features-header span {
+            font-size: 8pt;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3mm;
+            margin-bottom: 8mm;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 2.5mm;
+            background: #fff;
+            border: 1px solid #e8e8f0;
+            border-radius: 8px;
+            padding: 3mm 3.5mm;
+            font-size: 7.5pt;
+            font-weight: 500;
+            color: #333;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .feature-item .icon {
+            width: 6mm;
+            height: 6mm;
+            border-radius: 6px;
+            background: linear-gradient(135deg, #7928ca, #ff0080);
+            color: #fff;
+            font-size: 7pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .compare-section h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 11pt;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 4mm;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 7.5pt;
+            margin-bottom: 8mm;
+        }
+
+        .compare-table th {
+            background: linear-gradient(135deg, #7928ca, #9333ea);
+            color: #fff;
+            padding: 3mm 4mm;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .compare-table th:first-child { text-align: left; border-radius: 8px 0 0 0; }
+        .compare-table th:last-child { border-radius: 0 8px 0 0; }
+
+        .compare-table td {
+            padding: 2.5mm 4mm;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+        }
+
+        .compare-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .compare-table .win {
+            background: rgba(121,40,202,0.06);
+            color: #7928ca;
+            font-weight: 700;
+        }
+
+        .compare-table .yes { color: #00c853; }
+        .compare-table .no { color: #ef4444; }
+
+        .cta-bar {
+            background: linear-gradient(135deg, #0a0b1a, #1a0a2e);
+            border-radius: 12px;
+            padding: 7mm 9mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+
+        .cta-bar h3 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 12pt;
+            font-weight: 700;
+            margin-bottom: 2mm;
+        }
+
+        .cta-bar p {
+            font-size: 8pt;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.5;
+        }
+
+        .cta-contact {
+            text-align: right;
+            font-size: 8pt;
+            line-height: 1.7;
+        }
+
+        .cta-contact strong {
+            display: block;
+            font-size: 11pt;
+            color: #c084fc;
+            margin-bottom: 1mm;
+        }
+
+        .cta-contact a { color: #22d3ee; text-decoration: none; }
+
+        .footer-line {
+            text-align: center;
+            font-size: 6.5pt;
+            color: #999;
+            margin-top: 5mm;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1 -->
+    <div class="page page-cover">
+        <div class="cover-glow"></div>
+        <div class="cover-top">
+            <div class="brand-block">
+                <div class="brand-name">AWS-Agni</div>
+                <div class="brand-sub">Web Solution</div>
+            </div>
+            <div class="year-badge">Limited Offer 2026</div>
+        </div>
+
+        <div class="cover-hero">
+            <div class="product-tag">Restaurant Billing POS</div>
+            <h1 class="cover-title">AWS-<span>Billing</span><br>Solution</h1>
+            <p class="cover-desc">Complete restaurant POS system for fast GST billing, kitchen orders, inventory control & daily business reports — built for Tamil Nadu restaurants at an unbeatable yearly price.</p>
+
+            <div class="price-card">
+                <div class="amount">₹6,000 <small>/ Year</small></div>
+                <div class="details">
+                    <p>Complete POS setup with<br>training & support included</p>
+                    <div class="trial">✓ FREE TRIAL AVAILABLE</div>
+                </div>
+            </div>
+
+            <div class="highlights">
+                <div class="highlight-box"><div class="num">20+</div><div class="lbl">POS Features</div></div>
+                <div class="highlight-box"><div class="num">GST</div><div class="lbl">Auto Billing</div></div>
+                <div class="highlight-box"><div class="num">24/7</div><div class="lbl">Local Support</div></div>
+                <div class="highlight-box"><div class="num">100%</div><div class="lbl">Setup Help</div></div>
+            </div>
+        </div>
+
+        <div class="cover-bottom">
+            <p>www.awsagni.com</p>
+            <p>Pudukottai • Kamuthi • Ramanathapuram</p>
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page page-features">
+        <div class="features-header">
+            <h2>20+ Powerful Features</h2>
+            <span>AWS-Agni Web Solution</span>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item"><span class="icon">₹</span> GST Billing</div>
+            <div class="feature-item"><span class="icon">🖨</span> Thermal Bill Print</div>
+            <div class="feature-item"><span class="icon">📦</span> Inventory Management</div>
+            <div class="feature-item"><span class="icon">🪑</span> Table Management</div>
+            <div class="feature-item"><span class="icon">🍳</span> Kitchen Display (KOT)</div>
+            <div class="feature-item"><span class="icon">📊</span> Daily Sales Report</div>
+            <div class="feature-item"><span class="icon">📅</span> Monthly Analytics</div>
+            <div class="feature-item"><span class="icon">👥</span> Customer Database</div>
+            <div class="feature-item"><span class="icon">🏷</span> Discount & Offers</div>
+            <div class="feature-item"><span class="icon">💳</span> Multi-Payment Mode</div>
+            <div class="feature-item"><span class="icon">📷</span> Barcode Scanning</div>
+            <div class="feature-item"><span class="icon">🧾</span> Receipt Customization</div>
+            <div class="feature-item"><span class="icon">%</span> Tax Configuration</div>
+            <div class="feature-item"><span class="icon">💰</span> Expense Tracking</div>
+            <div class="feature-item"><span class="icon">👔</span> Staff Management</div>
+            <div class="feature-item"><span class="icon">➗</span> Split Billing</div>
+            <div class="feature-item"><span class="icon">⏸</span> Hold & Resume Orders</div>
+            <div class="feature-item"><span class="icon">⚠</span> Low Stock Alerts</div>
+            <div class="feature-item"><span class="icon">📋</span> Category Management</div>
+            <div class="feature-item"><span class="icon">📈</span> Item-wise Reports</div>
+            <div class="feature-item"><span class="icon">💾</span> Offline Backup</div>
+            <div class="feature-item"><span class="icon">📤</span> Data Export (Excel/PDF)</div>
+            <div class="feature-item"><span class="icon">🔒</span> Role-based Access</div>
+            <div class="feature-item"><span class="icon">📱</span> SMS Invoice</div>
+        </div>
+
+        <div class="compare-section">
+            <h3>Why AWS-Billing Wins</h3>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Manual</th>
+                        <th>Generic POS</th>
+                        <th>AWS-Billing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>GST Auto Billing</td><td class="no">✗</td><td>~</td><td class="win yes">✓</td></tr>
+                    <tr><td>KOT / Kitchen Display</td><td class="no">✗</td><td>~</td><td class="win yes">✓</td></tr>
+                    <tr><td>Inventory & Reports</td><td class="no">✗</td><td class="yes">✓</td><td class="win yes">✓</td></tr>
+                    <tr><td>Local Setup & Training</td><td class="no">✗</td><td class="no">✗</td><td class="win yes">✓</td></tr>
+                    <tr><td>Yearly Cost</td><td>Low</td><td>₹12,000+</td><td class="win"><strong>₹6,000/yr</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cta-bar">
+            <div>
+                <h3>Start Your Free Trial Today</h3>
+                <p>On-site installation • Menu setup • Staff training • Dedicated support</p>
+            </div>
+            <div class="cta-contact">
+                <strong>+91 9080700642</strong>
+                agniwebtech@gmail.com<br>
+                Kamuthi, Ramanathapuram — 623603<br>
+                <a href="https://www.awsagni.com">www.awsagni.com</a>
+            </div>
+        </div>
+
+        <p class="footer-line">© 2026 AWS-Agni Web Solution. All rights reserved. | Restaurant Billing POS — ₹6,000/Year</p>
+    </div>
+
+</body>
+</html>

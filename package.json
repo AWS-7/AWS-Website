@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "brochure": "node scripts/generate-brochure.js",
+    "brochure:pdf": "node scripts/generate-brochure.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "firebase": "^9.0.0",
+    "sweetalert": "^2.1.2"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.2.0"
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | AWS-Agni Web Solution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/aws-2026.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- LOGIN -->
+    <div id="adminLogin" class="dashboard-login-page">
+        <div class="login-card">
+            <div class="brand-text">AWS-Agni</div>
+            <div class="brand-sub">Admin Panel</div>
+            <h1>Admin Login</h1>
+            <p class="login-sub">Manage leads, projects, trials & support</p>
+            <form id="adminLoginForm" class="login-form">
+                <div class="form-group">
+                    <label for="adminUser">Username</label>
+                    <input type="text" id="adminUser" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="adminPass">Password</label>
+                    <input type="password" id="adminPass" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-glow w-100">Login</button>
+                <div id="adminLoginError" class="login-error"></div>
+            </form>
+            <div class="login-hint">
+                Default: <code>admin</code> / <code>awsagni2026</code><br>
+                Change password in <code>js/dashboard-data.js</code> before going live.
+            </div>
+            <p class="text-center mt-3 mb-0"><a href="index.html" class="small text-muted">← Back to Website</a></p>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="adminDashboard" class="dashboard-shell" style="display:none;">
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <aside class="dashboard-sidebar d-flex flex-column">
+            <div class="sidebar-brand">
+                <div class="brand-text">AWS-Agni</div>
+                <div class="brand-sub">Admin Panel</div>
+            </div>
+            <ul class="sidebar-nav flex-grow-1">
+                <li><a href="#" data-admin-tab="overview" class="active"><i class="fas fa-chart-pie"></i> Overview</a></li>
+                <li><a href="#" data-admin-tab="leads"><i class="fas fa-user-plus"></i> Leads</a></li>
+                <li><a href="#" data-admin-tab="trials"><i class="fas fa-cash-register"></i> POS Trials</a></li>
+                <li><a href="#" data-admin-tab="projects"><i class="fas fa-folder"></i> Projects</a></li>
+                <li><a href="#" data-admin-tab="tickets"><i class="fas fa-headset"></i> Support Tickets</a></li>
+                <li><a href="#" data-admin-tab="clients"><i class="fas fa-users"></i> Clients</a></li>
+                <li><a href="#" data-admin-tab="newsletter"><i class="fas fa-envelope-open-text"></i> Newsletter</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="dashboard-topbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="sidebar-toggle" id="sidebarToggle" type="button"><i class="fas fa-bars"></i></button>
+                    <h1>Admin Dashboard</h1>
+                </div>
+                <a href="index.html" class="btn btn-outline-light btn-sm">View Website</a>
+            </div>
+
+            <!-- Overview -->
+            <div id="adm-tab-overview" class="dash-tab-content active">
+                <div class="stats-row">
+                    <div class="stat-card"><div class="stat-val" id="admLeads">0</div><div class="stat-lbl">New Leads</div></div>
+                    <div class="stat-card"><div class="stat-val" id="admTrials">0</div><div class="stat-lbl">POS Trials</div></div>
+                    <div class="stat-card"><div class="stat-val" id="admProjects">0</div><div class="stat-lbl">Projects</div></div>
+                    <div class="stat-card"><div class="stat-val" id="admTickets">0</div><div class="stat-lbl">Open Tickets</div></div>
+                </div>
+                <div class="dash-panel">
+                    <h2><i class="fas fa-bell"></i> Quick Actions</h2>
+                    <p class="small text-muted">Leads from contact form & POS trial form appear automatically. Reply to client tickets from the Support tab.</p>
+                </div>
+            </div>
+
+            <!-- Leads -->
+            <div id="adm-tab-leads" class="dash-tab-content">
+                <div class="dash-panel">
+                    <h2><i class="fas fa-user-plus"></i> Contact Leads</h2>
+                    <div class="dash-table-wrap">
+                        <table class="dash-table">
+                            <thead><tr><th>Date</th><th>Name</th><th>Contact</th><th>Message</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody id="leadsTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POS Trials -->
+            <div id="adm-tab-trials" class="dash-tab-content">
+                <div class="dash-panel">
+                    <h2><i class="fas fa-cash-register"></i> POS Free Trial Requests</h2>
+                    <div class="dash-table-wrap">
+                        <table class="dash-table">
+                            <thead><tr><th>Date</th><th>Name</th><th>Restaurant</th><th>Phone</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody id="trialsTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div id="adm-tab-projects" class="dash-tab-content">
+                <div class="dash-panel">
+                    <h2><i class="fas fa-folder"></i> Project Management</h2>
+                    <div class="dash-table-wrap">
+                        <table class="dash-table">
+                            <thead><tr><th>Project</th><th>Client</th><th>Status</th><th>Progress</th><th>Actions</th></tr></thead>
+                            <tbody id="projectsAdminTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tickets -->
+            <div id="adm-tab-tickets" class="dash-tab-content">
+                <div id="ticketsAdminList"></div>
+            </div>
+
+            <!-- Clients -->
+            <div id="adm-tab-clients" class="dash-tab-content">
+                <div class="dash-panel">
+                    <h2><i class="fas fa-users"></i> Client Accounts</h2>
+                    <p class="small text-muted mb-3">Share Client ID + Phone with clients for portal login.</p>
+                    <div class="dash-table-wrap">
+                        <table class="dash-table">
+                            <thead><tr><th>Client ID</th><th>Name</th><th>Company</th><th>Phone</th></tr></thead>
+                            <tbody id="clientsTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="adm-tab-newsletter" class="dash-tab-content">
+                <div class="dash-panel">
+                    <h2><i class="fas fa-envelope-open-text"></i> Newsletter Subscribers</h2>
+                    <div class="dash-table-wrap">
+                        <table class="dash-table">
+                            <thead><tr><th>Date</th><th>Email</th><th>Status</th><th>Actions</th></tr></thead>
+                            <tbody id="newsletterTable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/dashboard-data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
