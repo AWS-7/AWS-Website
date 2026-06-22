@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
             coverflowEffect: {
                 rotate: 0,
                 stretch: 0,
-                depth: 120,
-                modifier: 1.05,
-                slideShadows: true,
+                depth: 40,
+                modifier: 1,
+                slideShadows: false,
             },
             pagination: {
                 el: '.hero-carousel-pagination',
