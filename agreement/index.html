@@ -11,9 +11,39 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/agreement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="agreement-app">
 
+    <!-- Access lock — billing staff only -->
+    <div id="agreementLock" class="agr-lock" role="dialog" aria-labelledby="lockTitle" aria-modal="true">
+        <div class="agr-lock-panel">
+            <div class="agr-lock-icon" aria-hidden="true"><i class="fas fa-lock"></i></div>
+            <h1 id="lockTitle">Billing Agreement Access</h1>
+            <p class="agr-lock-desc">Enter authorized credentials to open the Service Agreement generator.</p>
+            <form id="agreementLoginForm" novalidate>
+                <div class="agr-field">
+                    <label for="loginUserId">User ID</label>
+                    <input type="text" id="loginUserId" name="userId" autocomplete="username" required placeholder="Enter user ID">
+                </div>
+                <div class="agr-field">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" autocomplete="current-password" required placeholder="Enter password">
+                </div>
+                <div class="agr-field">
+                    <label for="loginOwnerId">Billing Owner ID</label>
+                    <input type="text" id="loginOwnerId" name="ownerId" inputmode="numeric" autocomplete="off" required placeholder="Enter billing owner ID">
+                </div>
+                <button type="submit" class="agr-btn agr-btn-primary agr-btn-full">
+                    <i class="fas fa-unlock" aria-hidden="true"></i> Unlock Agreement
+                </button>
+                <p class="agr-lock-error" id="loginError" role="alert" aria-live="polite"></p>
+            </form>
+            <a href="/" class="agr-lock-back"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Home</a>
+        </div>
+    </div>
+
+    <div id="agreementApp" hidden>
     <header class="agr-toolbar">
         <div class="agr-toolbar-inner">
             <a href="/" class="agr-brand">
@@ -21,6 +51,9 @@
                 <span class="agr-brand-sub">Web Solution</span>
             </a>
             <span class="agr-toolbar-title">Billing Software Agreement Generator</span>
+            <button type="button" class="agr-btn agr-btn-outline agr-btn-logout" id="btnLogout" hidden>
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Logout
+            </button>
         </div>
     </header>
 
@@ -141,6 +174,7 @@
     </main>
 
     <div class="agr-preview-backdrop" id="previewBackdrop" hidden></div>
+    </div>
 
     <script type="module" src="/js/agreement-form.js"></script>
 </body>

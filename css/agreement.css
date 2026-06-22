@@ -24,6 +24,115 @@ html, body {
 
 .agreement-app { min-height: 100vh; }
 
+/* ===== Agreement access lock ===== */
+.agr-lock {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+    background:
+        radial-gradient(ellipse 60% 50% at 20% 20%, rgba(121, 40, 202, 0.18), transparent 55%),
+        radial-gradient(ellipse 50% 45% at 80% 80%, rgba(255, 0, 128, 0.12), transparent 55%),
+        linear-gradient(160deg, #0a0b18 0%, #12132a 50%, #0f1023 100%);
+}
+
+.agr-lock[hidden] {
+    display: none !important;
+}
+
+.agr-lock-panel {
+    width: min(400px, 100%);
+    padding: 2rem 1.65rem 1.5rem;
+    border-radius: var(--agr-radius);
+    background: var(--agr-card);
+    border: 1px solid var(--agr-border);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    text-align: center;
+}
+
+.agr-lock-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--agr-purple), var(--agr-pink));
+    box-shadow: 0 8px 24px rgba(121, 40, 202, 0.35);
+}
+
+.agr-lock-panel h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.4rem;
+}
+
+.agr-lock-desc {
+    margin: 0 0 1.35rem;
+    font-size: 0.86rem;
+    color: var(--agr-muted);
+    line-height: 1.5;
+}
+
+#agreementLoginForm {
+    text-align: left;
+}
+
+#agreementLoginForm .agr-field {
+    margin-bottom: 0.85rem;
+}
+
+.agr-btn-full {
+    width: 100%;
+    margin-top: 0.35rem;
+}
+
+.agr-lock-error {
+    min-height: 1.25rem;
+    margin: 0.65rem 0 0;
+    font-size: 0.8rem;
+    color: #f87171;
+    text-align: center;
+}
+
+.agr-lock-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.15rem;
+    font-size: 0.82rem;
+    color: var(--agr-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.agr-lock-back:hover {
+    color: var(--agr-cyan);
+}
+
+.agr-btn-logout {
+    margin-left: auto;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.78rem;
+}
+
+.agr-toolbar-inner .agr-btn-logout {
+    margin-left: 0;
+}
+
+@media (min-width: 576px) {
+    .agr-toolbar-inner .agr-btn-logout {
+        margin-left: auto;
+    }
+}
+
 .agr-toolbar {
     position: sticky;
     top: 0;

@@ -4,6 +4,14 @@
 
 import html2pdf from 'html2pdf.js';
 
+const AUTH = {
+    userId: 'aws2026',
+    password: 'Aws2026',
+    ownerId: '900700',
+};
+
+const SESSION_KEY = 'aws-agr-auth';
+
 const COMPANY = {
     name: 'AWS-Agni Web Solution',
     product: 'AWS-Agni Billing Software',
@@ -15,11 +23,127 @@ const COMPANY = {
 
 const PAYMENT_OPTIONS = ['Cash', 'UPI', 'Bank Transfer', 'Cheque', 'Card / Online'];
 
-const form = document.getElementById('agreementForm');
-const previewEl = document.getElementById('agreementPreview');
-const previewPanel = document.getElementById('previewPanel');
-const previewBackdrop = document.getElementById('previewBackdrop');
-const statusEl = document.getElementById('formStatus');
+let form;
+let previewEl;
+let previewPanel;
+let previewBackdrop;
+let statusEl;
+
+function isAuthenticated() {
+    return sessionStorage.getItem(SESSION_KEY) === '1';
+}
+
+function showApp() {
+    const lock = document.getElementById('agreementLock');
+    const app = document.getElementById('agreementApp');
+    const logoutBtn = document.getElementById('btnLogout');
+    if (lock) lock.hidden = true;
+    if (app) app.hidden = false;
+    if (logoutBtn) logoutBtn.hidden = false;
+}
+
+function showLock() {
+    const lock = document.getElementById('agreementLock');
+    const app = document.getElementById('agreementApp');
+    const logoutBtn = document.getElementById('btnLogout');
+    if (lock) lock.hidden = false;
+    if (app) app.hidden = true;
+    if (logoutBtn) logoutBtn.hidden = true;
+    closePreviewPanel();
+}
+
+function logoutAgreement() {
+    sessionStorage.removeItem(SESSION_KEY);
+    showLock();
+    const loginForm = document.getElementById('agreementLoginForm');
+    if (loginForm) loginForm.reset();
+    const loginError = document.getElementById('loginError');
+    if (loginError) loginError.textContent = '';
+}
+
+function setupAuthGate() {
+    const loginForm = document.getElementById('agreementLoginForm');
+    const loginError = document.getElementById('loginError');
+
+    if (isAuthenticated()) {
+        showApp();
+        initAgreementApp();
+        return;
+    }
+
+    showLock();
+
+    if (!loginForm) return;
+
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userId = document.getElementById('loginUserId')?.value.trim() ?? '';
+        const password = document.getElementById('loginPassword')?.value ?? '';
+        const ownerId = document.getElementById('loginOwnerId')?.value.trim() ?? '';
+
+        if (userId === AUTH.userId && password === AUTH.password && ownerId === AUTH.ownerId) {
+            sessionStorage.setItem(SESSION_KEY, '1');
+            if (loginError) loginError.textContent = '';
+            showApp();
+            initAgreementApp();
+        } else if (loginError) {
+            loginError.textContent = 'Invalid User ID, Password, or Billing Owner ID.';
+        }
+    });
+}
+
+function initAgreementApp() {
+    form = document.getElementById('agreementForm');
+    previewEl = document.getElementById('agreementPreview');
+    previewPanel = document.getElementById('previewPanel');
+    previewBackdrop = document.getElementById('previewBackdrop');
+    statusEl = document.getElementById('formStatus');
+
+    if (!form) return;
+
+    initMetaFields();
+    bindAgreementEvents();
+}
+
+function bindAgreementEvents() {
+    document.getElementById('btnPreview')?.addEventListener('click', () => {
+        if (renderPreview()) openPreviewPanel();
+    });
+
+    document.getElementById('btnGenerate')?.addEventListener('click', async () => {
+        const data = renderPreview();
+        if (!data) return;
+        openPreviewPanel();
+        await downloadPdf(data);
+    });
+
+    document.getElementById('btnPrint')?.addEventListener('click', printAgreement);
+    document.getElementById('btnClosePreview')?.addEventListener('click', closePreviewPanel);
+    previewBackdrop?.addEventListener('click', closePreviewPanel);
+
+    document.getElementById('btnLogout')?.addEventListener('click', logoutAgreement);
+
+    form.addEventListener('reset', () => {
+        setTimeout(() => {
+            document.getElementById('agreementId').value = generateAgreementId();
+            document.getElementById('agreementDate').value = formatAgreementDate();
+            previewEl.innerHTML = '';
+            setStatus('');
+            closePreviewPanel();
+        }, 0);
+    });
+
+    form.addEventListener('input', () => {
+        if (previewEl.innerHTML) renderPreview();
+    });
+
+    form.querySelectorAll('input[name="planSelected"]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+            const amount = document.getElementById('subscriptionAmount');
+            if (radio.value === 'Yearly' && !amount.value) amount.value = '6000';
+        });
+    });
+}
 
 function generateAgreementId() {
     const d = new Date();
@@ -276,6 +400,7 @@ function validateForm(data) {
 }
 
 function setStatus(message, type = '') {
+    if (!statusEl) return;
     statusEl.textContent = message;
     statusEl.className = 'agr-form-note' + (type ? ` is-${type}` : '');
 }
@@ -299,9 +424,12 @@ function openPreviewPanel() {
 }
 
 function closePreviewPanel() {
+    if (!previewPanel) return;
     previewPanel.classList.remove('is-open');
-    previewBackdrop.classList.remove('is-open');
-    previewBackdrop.hidden = true;
+    if (previewBackdrop) {
+        previewBackdrop.classList.remove('is-open');
+        previewBackdrop.hidden = true;
+    }
 }
 
 async function downloadPdf(data) {
@@ -357,40 +485,4 @@ function initMetaFields() {
     }
 }
 
-document.getElementById('btnPreview').addEventListener('click', () => {
-    if (renderPreview()) openPreviewPanel();
-});
-
-document.getElementById('btnGenerate').addEventListener('click', async () => {
-    const data = renderPreview();
-    if (!data) return;
-    openPreviewPanel();
-    await downloadPdf(data);
-});
-
-document.getElementById('btnPrint').addEventListener('click', printAgreement);
-document.getElementById('btnClosePreview').addEventListener('click', closePreviewPanel);
-previewBackdrop.addEventListener('click', closePreviewPanel);
-
-form.addEventListener('reset', () => {
-    setTimeout(() => {
-        document.getElementById('agreementId').value = generateAgreementId();
-        document.getElementById('agreementDate').value = formatAgreementDate();
-        previewEl.innerHTML = '';
-        setStatus('');
-        closePreviewPanel();
-    }, 0);
-});
-
-form.addEventListener('input', () => {
-    if (previewEl.innerHTML) renderPreview();
-});
-
-form.querySelectorAll('input[name="planSelected"]').forEach((radio) => {
-    radio.addEventListener('change', () => {
-        const amount = document.getElementById('subscriptionAmount');
-        if (radio.value === 'Yearly' && !amount.value) amount.value = '6000';
-    });
-});
-
-initMetaFields();
+setupAuthGate();
