@@ -1940,7 +1940,17 @@ body.mobile-nav-open {
     }
 
     .hero-lottie-wrap {
-        display: none;
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+
+    #heroLottie {
+        width: 0 !important;
+        height: 0 !important;
+        min-height: 0 !important;
     }
 
     .hero-2026 .hero-badge {

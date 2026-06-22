@@ -708,7 +708,7 @@
     color: var(--accent-color);
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 991.98px) {
     .hero-lottie-wrap {
         position: relative;
         top: 0;
@@ -722,6 +722,23 @@
     }
 
     #heroLottie { margin: 0 auto; }
+}
+
+@media (max-width: 767.98px) {
+    .hero-lottie-wrap {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+
+    #heroLottie {
+        width: 0 !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+    }
 }
 
 /* POS onboarding checklist */

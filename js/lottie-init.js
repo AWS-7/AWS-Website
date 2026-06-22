@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeof lottie === 'undefined') return;
 
     const heroEl = document.getElementById('heroLottie');
-    if (heroEl) loadLottie(heroEl, LOTTIE_ANIMS.hero, 220);
+    if (heroEl && window.matchMedia('(min-width: 768px)').matches) {
+        loadLottie(heroEl, LOTTIE_ANIMS.hero, 220);
+    }
 
     document.querySelectorAll('[data-lottie]').forEach(el => {
         const key = el.dataset.lottie;
