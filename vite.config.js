@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -24,12 +25,29 @@ function ensureLegacyStylesheet() {
     name: 'ensure-legacy-stylesheet',
     transformIndexHtml: {
       order: 'post',
-      handler(html, ctx) {
+      handler(html) {
         if (!html.includes('css/style.css') && !html.includes('/css/style.css')) {
           return html.replace('</head>', '  <link rel="stylesheet" href="/css/style.css">\n</head>');
         }
         return html;
       },
+    },
+  };
+}
+
+function versionServiceWorker() {
+  return {
+    name: 'version-service-worker',
+    closeBundle() {
+      const distSw = resolve(__dirname, 'dist/sw.js');
+      if (!existsSync(distSw)) return;
+
+      const commit = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 8);
+      const version = commit ? `aws-agni-${commit}` : `aws-agni-${Date.now().toString(36)}`;
+      let sw = readFileSync(distSw, 'utf8');
+      sw = sw.replace(/const CACHE_NAME = '[^']+';/, `const CACHE_NAME = '${version}';`);
+      writeFileSync(distSw, sw);
+      console.log(`Service worker cache: ${version}`);
     },
   };
 }
@@ -54,6 +72,7 @@ export default defineConfig({
         { src: '*.jpeg', dest: '.' },
       ],
     }),
+    versionServiceWorker(),
   ],
   build: {
     outDir: 'dist',
