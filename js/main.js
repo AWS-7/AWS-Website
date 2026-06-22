@@ -75,9 +75,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Hero 3D card carousel
     const heroCarousel = document.querySelector('.hero-carousel');
+    const heroMobileMq = window.matchMedia('(max-width: 767.98px)');
+
+    function resetMobileHeroLottie() {
+        if (!heroMobileMq.matches) return;
+        const wrap = document.querySelector('.hero-lottie-wrap');
+        const lottieEl = document.getElementById('heroLottie');
+        if (wrap) {
+            wrap.setAttribute('aria-hidden', 'true');
+            wrap.style.display = 'none';
+            wrap.style.height = '0';
+            wrap.style.margin = '0';
+            wrap.style.padding = '0';
+            wrap.style.overflow = 'hidden';
+        }
+        if (lottieEl) {
+            lottieEl.style.width = '0';
+            lottieEl.style.height = '0';
+            lottieEl.style.minHeight = '0';
+            lottieEl.style.margin = '0';
+            lottieEl.innerHTML = '';
+        }
+    }
+
+    function syncHeroCarouselHeight(swiper) {
+        if (!heroMobileMq.matches || !heroCarousel) return;
+        requestAnimationFrame(function() {
+            swiper.updateAutoHeight(0);
+            heroCarousel.style.height = 'auto';
+            const wrapper = heroCarousel.querySelector('.swiper-wrapper');
+            if (wrapper) wrapper.style.height = 'auto';
+        });
+    }
+
+    resetMobileHeroLottie();
+
     if (heroCarousel) {
-        new Swiper('.hero-carousel', {
-            effect: 'coverflow',
+        const heroSwiper = new Swiper('.hero-carousel', {
+            effect: heroMobileMq.matches ? 'slide' : 'coverflow',
+            autoHeight: heroMobileMq.matches,
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: 'auto',
@@ -104,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             breakpoints: {
                 768: {
+                    autoHeight: false,
                     coverflowEffect: {
                         rotate: 18,
                         stretch: -10,
@@ -131,6 +168,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                 },
             },
+            on: {
+                init: function() {
+                    syncHeroCarouselHeight(this);
+                },
+                slideChangeTransitionEnd: function() {
+                    syncHeroCarouselHeight(this);
+                },
+                resize: function() {
+                    resetMobileHeroLottie();
+                    syncHeroCarouselHeight(this);
+                },
+            },
+        });
+
+        heroMobileMq.addEventListener('change', resetMobileHeroLottie);
+        window.addEventListener('load', function() {
+            resetMobileHeroLottie();
+            syncHeroCarouselHeight(heroSwiper);
         });
     }
 });

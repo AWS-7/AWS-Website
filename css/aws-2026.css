@@ -1850,10 +1850,11 @@ body.mobile-nav-open {
 
     .hero-2026 .row {
         justify-content: center;
+        align-items: flex-start !important;
         margin-left: 0;
         margin-right: 0;
-        --bs-gutter-y: 0.25rem;
-        row-gap: 0.25rem;
+        --bs-gutter-y: 0;
+        row-gap: 0;
     }
 
     .hero-2026 .row > [class*="col-"] {
@@ -1866,20 +1867,32 @@ body.mobile-nav-open {
         width: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         padding: 0;
-        margin-bottom: 0;
+        margin: 0;
+        height: auto !important;
+        min-height: 0 !important;
     }
 
     .hero-carousel-wrap {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
+        height: auto !important;
+        min-height: 0 !important;
     }
 
     .hero-carousel-3d {
         overflow: hidden;
         padding: 0.15rem 0 0;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .hero-carousel-3d .swiper-wrapper {
+        height: auto !important;
+        min-height: 0 !important;
+        align-items: flex-start;
     }
 
     .hero-carousel-3d .swiper-slide-shadow-left,
@@ -1933,29 +1946,38 @@ body.mobile-nav-open {
         align-items: center;
         text-align: center;
         width: 100%;
-        height: auto;
+        height: auto !important;
+        min-height: 0 !important;
         justify-content: flex-start;
-        padding-top: 0;
+        padding-top: 0.75rem;
         margin-top: 0;
     }
 
-    .hero-lottie-wrap {
+    .hero-lottie-wrap,
+    .hero-lottie-wrap.d-md-block {
         display: none !important;
         height: 0 !important;
+        max-height: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
-        overflow: hidden;
+        overflow: hidden !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 
     #heroLottie {
         width: 0 !important;
         height: 0 !important;
         min-height: 0 !important;
+        max-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
     }
 
     .hero-2026 .hero-badge {
         margin-top: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 0.85rem;
     }
 
     .hero-2026 h1 {

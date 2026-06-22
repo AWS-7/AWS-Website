@@ -725,19 +725,26 @@
 }
 
 @media (max-width: 767.98px) {
-    .hero-lottie-wrap {
+    .hero-lottie-wrap,
+    .hero-lottie-wrap.d-md-block {
         display: none !important;
         height: 0 !important;
+        max-height: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
-        overflow: hidden;
+        overflow: hidden !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 
     #heroLottie {
         width: 0 !important;
         height: 0 !important;
         min-height: 0 !important;
+        max-height: 0 !important;
         margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden !important;
     }
 }
 
