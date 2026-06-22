@@ -7,9 +7,9 @@ import html2pdf from 'html2pdf.js';
 const COMPANY = {
     name: 'AWS-Agni Web Solution',
     product: 'AWS-Agni Billing Software',
-    email: 'agniwebtech@gmail.com',
+    email: 'agniwebsolution@gmail.com',
     phone: '+91 9080700642',
-    website: 'www.awsagni.com',
+    website: 'www.agniwebsolution.com',
     address: 'Kamuthi, Ramanathapuram, Tamil Nadu — 623603',
 };
 

@@ -18,6 +18,7 @@ const pages = {
   'pos-software-ramanathapuram': resolve(__dirname, 'pos-software-ramanathapuram.html'),
   project: resolve(__dirname, 'project/index.html'),
   agreement: resolve(__dirname, 'agreement/index.html'),
+  'pos-checklist': resolve(__dirname, 'pos-checklist/index.html'),
 };
 
 function ensureLegacyStylesheet() {
