@@ -8,11 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "brochure": "node scripts/generate-brochure.js",
-    "brochure:pdf": "node scripts/generate-brochure.js"
+    "brochure:pdf": "node scripts/generate-brochure.js",
+    "agreement:dev": "vite --open /agreement/"
   },
   "dependencies": {
     "bootstrap": "^5.3.6",
     "firebase": "^9.0.0",
+    "html2pdf.js": "^0.14.0",
+    "pdfmake": "^0.3.11",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {

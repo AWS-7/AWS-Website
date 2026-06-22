@@ -17,6 +17,7 @@ const pages = {
   'web-design-pudukottai': resolve(__dirname, 'web-design-pudukottai.html'),
   'pos-software-ramanathapuram': resolve(__dirname, 'pos-software-ramanathapuram.html'),
   project: resolve(__dirname, 'project/index.html'),
+  agreement: resolve(__dirname, 'agreement/index.html'),
 };
 
 function ensureLegacyStylesheet() {

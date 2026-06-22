@@ -7,7 +7,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/project", "destination": "/project/index.html" }
+    { "source": "/project", "destination": "/project/index.html" },
+    { "source": "/agreement", "destination": "/agreement/index.html" }
   ],
   "headers": [
     {
