@@ -90,9 +90,9 @@ document.addEventListener('DOMContentLoaded', function() {
             coverflowEffect: {
                 rotate: 0,
                 stretch: 0,
-                depth: 90,
-                modifier: 1,
-                slideShadows: false,
+                depth: 120,
+                modifier: 1.05,
+                slideShadows: true,
             },
             pagination: {
                 el: '.hero-carousel-pagination',
@@ -105,29 +105,29 @@ document.addEventListener('DOMContentLoaded', function() {
             breakpoints: {
                 768: {
                     coverflowEffect: {
-                        rotate: 14,
-                        stretch: -8,
-                        depth: 160,
-                        modifier: 1.15,
-                        slideShadows: false,
+                        rotate: 18,
+                        stretch: -10,
+                        depth: 200,
+                        modifier: 1.2,
+                        slideShadows: true,
                     },
                 },
                 992: {
                     coverflowEffect: {
-                        rotate: 10,
-                        stretch: -2,
-                        depth: 100,
-                        modifier: 1,
-                        slideShadows: false,
+                        rotate: 16,
+                        stretch: -4,
+                        depth: 160,
+                        modifier: 1.1,
+                        slideShadows: true,
                     },
                 },
                 1200: {
                     coverflowEffect: {
-                        rotate: 14,
-                        stretch: -4,
-                        depth: 130,
-                        modifier: 1.05,
-                        slideShadows: false,
+                        rotate: 18,
+                        stretch: -6,
+                        depth: 180,
+                        modifier: 1.15,
+                        slideShadows: true,
                     },
                 },
             },

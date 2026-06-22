@@ -8,7 +8,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const pages = {
   main: resolve(__dirname, 'index.html'),
-  blog: resolve(__dirname, 'blog.html'),
   service: resolve(__dirname, 'service.html'),
   admin: resolve(__dirname, 'admin.html'),
   portal: resolve(__dirname, 'portal.html'),

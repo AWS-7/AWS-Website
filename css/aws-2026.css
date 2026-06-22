@@ -632,41 +632,13 @@ body.mobile-nav-open {
     max-width: 560px;
     margin: 0 auto;
     position: relative;
-}
-
-.hero-carousel-glass {
-    position: relative;
-    padding: 1.15rem 0.75rem 2.35rem;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-    box-shadow:
-        0 28px 70px rgba(121, 40, 202, 0.32),
-        0 0 48px rgba(255, 0, 128, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.hero-carousel-glass::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(121, 40, 202, 0.55), rgba(255, 0, 128, 0.35), rgba(0, 198, 255, 0.25));
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0.65;
+    padding: 0.25rem 0 0;
 }
 
 .hero-carousel-3d {
     overflow: visible;
-    padding: 0.5rem 0 2rem;
-    perspective: 1200px;
+    padding: 0.5rem 0 2.25rem;
+    perspective: 1400px;
 }
 
 .hero-carousel-3d .swiper-slide {
@@ -699,22 +671,20 @@ body.mobile-nav-open {
     position: relative;
     width: 100%;
     aspect-ratio: 1717 / 916;
-    border-radius: 20px;
-    overflow: hidden;
+    border-radius: 18px;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(0.45rem, 2.2vw, 0.75rem);
+    padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(145deg, rgba(15, 16, 35, 0.95), rgba(25, 18, 48, 0.9));
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(121, 40, 202, 0.15);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transform-style: preserve-3d;
     transition:
         transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.55s ease,
-        border-color 0.55s ease;
+        filter 0.55s ease;
 }
 
 .hero-3d-card-inner img {
@@ -724,10 +694,18 @@ body.mobile-nav-open {
     object-position: center;
     display: block;
     flex-shrink: 0;
+    border-radius: 18px;
+    backface-visibility: hidden;
+    filter:
+        drop-shadow(0 18px 35px rgba(0, 0, 0, 0.55))
+        drop-shadow(0 0 24px rgba(121, 40, 202, 0.18));
+    transition:
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.55s ease;
 }
 
 .hero-3d-card-inner--banner {
-    background: linear-gradient(135deg, #eef4ff 0%, #f8faff 100%);
+    background: transparent;
 }
 
 .hero-3d-card-shine {
@@ -746,13 +724,14 @@ body.mobile-nav-open {
 }
 
 .hero-carousel-3d .swiper-slide-active .hero-3d-card-inner {
-    transform: scale(1.04) translateZ(24px);
-    border-color: rgba(121, 40, 202, 0.55);
-    box-shadow:
-        0 28px 65px rgba(121, 40, 202, 0.45),
-        0 0 35px rgba(255, 0, 128, 0.28),
-        0 0 70px rgba(0, 198, 255, 0.18),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+    transform: scale(1.06) translateZ(48px) rotateX(3deg);
+}
+
+.hero-carousel-3d .swiper-slide-active .hero-3d-card-inner img {
+    filter:
+        drop-shadow(0 32px 55px rgba(0, 0, 0, 0.6))
+        drop-shadow(0 0 40px rgba(121, 40, 202, 0.45))
+        drop-shadow(0 0 60px rgba(255, 0, 128, 0.22));
 }
 
 .hero-carousel-3d .swiper-slide-active .hero-3d-card-shine {
@@ -838,10 +817,6 @@ body.mobile-nav-open {
 @media (max-width: 991.98px) {
     .hero-carousel-wrap {
         max-width: 100%;
-    }
-
-    .hero-carousel-glass {
-        padding: 0.75rem 0.35rem 1rem;
     }
 
     .hero-carousel-3d {
@@ -1901,12 +1876,6 @@ body.mobile-nav-open {
         margin: 0 auto;
     }
 
-    .hero-carousel-glass {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0.65rem 0.5rem 0.95rem;
-    }
-
     .hero-carousel-3d {
         overflow: hidden;
         padding: 0.25rem 0 0.65rem;
@@ -1927,7 +1896,7 @@ body.mobile-nav-open {
     }
 
     .hero-carousel-3d .swiper-slide-active .hero-3d-card-inner {
-        transform: scale(1.02);
+        transform: scale(1.02) translateZ(12px);
     }
 
     .hero-2026 .hero-content {
@@ -2103,10 +2072,6 @@ body.mobile-nav-open {
         overflow: hidden;
     }
 
-    .hero-carousel-glass {
-        overflow: hidden;
-    }
-
     .hero-carousel-3d {
         overflow: hidden;
         padding: 0.5rem 0 1.75rem;
@@ -2118,7 +2083,7 @@ body.mobile-nav-open {
     }
 
     .hero-carousel-3d .swiper-slide-active .hero-3d-card-inner {
-        transform: scale(1.02) translateZ(10px);
+        transform: scale(1.03) translateZ(20px) rotateX(2deg);
     }
 
     .hero-2026 h1,
