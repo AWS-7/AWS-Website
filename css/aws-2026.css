@@ -2067,7 +2067,11 @@ body.mobile-nav-open {
 
 @media (min-width: 992px) {
     .hero-2026 .hero-content {
+        position: relative;
+        z-index: 3;
         text-align: left;
+        min-width: 0;
+        padding-right: 1.25rem;
     }
 
     .hero-2026 .hero-cta {
@@ -2079,6 +2083,56 @@ body.mobile-nav-open {
     }
 
     .hero-visual {
+        position: relative;
+        z-index: 1;
         justify-content: flex-end;
+        min-width: 0;
+        overflow: hidden;
+        padding-left: 0.75rem;
+    }
+
+    .hero-2026 .row > [class*="col-lg-"] {
+        min-width: 0;
+    }
+
+    .hero-carousel-wrap {
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .hero-carousel-glass {
+        overflow: hidden;
+    }
+
+    .hero-carousel-3d {
+        overflow: hidden;
+        padding: 0.5rem 0 1.75rem;
+    }
+
+    .hero-carousel-3d .swiper-slide {
+        width: 82%;
+        max-width: 420px;
+    }
+
+    .hero-carousel-3d .swiper-slide-active .hero-3d-card-inner {
+        transform: scale(1.02) translateZ(10px);
+    }
+
+    .hero-2026 h1,
+    .hero-2026 .lead {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-carousel-wrap {
+        max-width: 540px;
+    }
+
+    .hero-carousel-3d .swiper-slide {
+        max-width: 460px;
     }
 }

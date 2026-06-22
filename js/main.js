@@ -114,10 +114,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 992: {
                     coverflowEffect: {
-                        rotate: 22,
-                        stretch: -12,
-                        depth: 220,
-                        modifier: 1.35,
+                        rotate: 10,
+                        stretch: -2,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: false,
+                    },
+                },
+                1200: {
+                    coverflowEffect: {
+                        rotate: 14,
+                        stretch: -4,
+                        depth: 130,
+                        modifier: 1.05,
                         slideShadows: false,
                     },
                 },
